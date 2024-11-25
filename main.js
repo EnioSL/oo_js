@@ -46,28 +46,28 @@ class Tablet extends Dispositivo {
 
     // Método específico de tablet
     desenhar() {
-        console.log("Desenhando na tela de " + this.tamanhoTela + "polegadas");
+        console.log("Desenhando na tela de " + this.tamanhoTela + " polegadas ");
     }
 }
 
 
 // Classe filha 3 - smartwatch
 class SmartWatch extends Dispositivo {
-    constructor(sistOp, fabricante, memRam, armazInterno, anoFabricacao, modelo, tipoPulseira) {
+    constructor(sistOp, fabricante, memRam, armazInterno, anoFabricacao, modelo, frequenciaCardiaca) {
         super(sistOp, fabricante, memRam, armazInterno, anoFabricacao, modelo);
-        this.batimentosMinutos = batimentosMinuto; 
+        this.frequenciaCardiaca = frequenciaCardiaca; 
     }
 
-    // Método específico de tablet
+    // Método específico de Smartwatch
     monitorarBatimentos() {
-        console.log("Monitorando batimentos cardíacos" + this.batimentosMinuto + "BPM");
+        console.log(" Monitorando batimentos cardíacos " + this.frequenciaCardiaca + " BPM ");
     }
 }
 
 // Instâncias de classes herdadas
 const smartphone1 = new Smartphone("Android", "Samsung", 8, 128, 2023, "S24", 60);
 const tablet1 = new Tablet("iOS", "Apple", 6, 256, 2023, "iPad Pro", 11);
-const smartwatch1 = new SmartWatch("Wear OS", "Google", 1, 8, 2024, "Pixel Watch", "Silicone");
+const smartwatch1 = new SmartWatch("Wear OS", "Google", 1, 8, 2024, "Pixel Watch", " 75 ");
 
 // Exibindo os objetos e chamando métodos
 
@@ -82,40 +82,3 @@ tablet1.desenhar();
 console.log(smartwatch1);
 smartwatch1.wi_fi();
 smartwatch1.monitorarBatimentos();
-
-
-// como verificar os tipos de dados:
-// const sistOp = "Android";
-// const fabricante = "Samsung";
-// const memRam = 8;
-// const armazInterno = 128;
-// const anoFabricacao = 2022;
-// const modelo = "S24";
-// const atributos = ["5G", "smart_lock", "face_id", "128Mhz"]
-
-// utilizando as informações acima para criar um objeto:
-// const aparelho = {
-//     sistOp: sistOp,
-//     fabricante: fabricante,
-//     memRam: memRam,
-//     armazInterno: armazInterno,
-//     anoFabricacao: anoFabricacao,
-//     modelo: modelo,
-//     atributos: atributos, 
-// }
-
-// como acessar os atributos dentro dos objetos
-
-// // primeira opção é através da "notação ponto": Ex. "variável.propriedade"
-// console.log(aparelho.atributos) // o resultado será "Samsung" para esse caso
-
-// // segunda maneira é com os colchetes []: Ex.variável['propriedade']
-// console.log(aparelho['sistOp','fabricante','memRam','armazInterno','anoFabricacao','modelo','atributos'])
-
-// // podemos criar um atributo dinâmico criando uma função conforme abaixo:
-// function exibeAparelho(modeloAparelho) {
-//     console.log(aparelho[modeloAparelho])
-// }
-// //chamando a função acima:
-// exibeAparelho('modelo');
-// // obs. Essa função acima não pode ser feita com a "notação ponto", apenas com os colchetes.
